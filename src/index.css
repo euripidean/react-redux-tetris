@@ -1,13 +1,39 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* App */
+.App {
+  --col-side: calc(var(--tile-size) * 4);
+  --col-center: calc(var(--tile-size) * 10);
+  --grid-height: calc(var(--tile-size) * 18);
+
+  width: calc(var(--tile-size) * (4 + 1 + 10 + 1 + 4));
+  margin: auto;
+  display: grid;
+
+  grid-gap: var(--tile-size) var(--tile-size);
+  /* Defines three columns of `--col-side`, `--col-center`, and `--col-side` widths. */
+  grid-template-columns: var(--col-side) var(--col-center) var(--col-side);
+  /* Defines three rows of `100px`, `--grid-height`, and 100px. */
+  grid-template-rows: 100px var(--grid-height) 100px;
+
+  /* This defines the areas on the grid with names: 'h', 'l', 'c', 'r',
+  and 'b'. The '.' represents an empty cell on the grid. */
+  grid-template-areas:
+    "h h h"
+    "l c r"
+    ". b .";
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.App-header {
+  grid-area: h;
+}
+
+.next-block {
+  grid-area: l;
+}
+
+.grid-board {
+  grid-area: c;
+}
+
+.score-board {
+  grid-area: r;
 }
