@@ -2,6 +2,7 @@ import "./App.css";
 import GridBoard from "./Components/GridBoard/GridBoard";
 import NextBlock from "./Components/NextBlock/NextBlock";
 import ScoreBoard from "./Components/ScoreBoard/ScoreBoard";
+import Controls from "./Components/Controls/Controls";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <GridBoard />
         <NextBlock />
         <ScoreBoard />
+        <Controls />
       </div>
     </div>
   );
