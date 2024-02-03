@@ -9,7 +9,7 @@ export const gridDefault = () => {
 
   for (let row = 0; row < rows; row++) {
     array.push([0]);
-    for (let col = 0; col < cols; col++) {
+    for (let col = 1; col < cols; col++) {
       array[row].push(0);
     }
   }
