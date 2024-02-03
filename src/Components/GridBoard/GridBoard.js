@@ -1,18 +1,36 @@
 import React from "react";
 import GridSquare from "../GridSquare/GridSquare";
+import { useSelector } from "react-redux";
+import { shapes } from "../../utils/index";
 import "./GridBoard.css";
 
 // Represents a 10 x 18 grid of grid squares
 
 export default function GridBoard() {
-  // generates an array of 18 rows, each containing 10 GridSquares.
-  const grid = [];
-  for (let row = 0; row < 18; row++) {
-    grid.push([]);
-    for (let col = 0; col < 10; col++) {
-      grid[row].push(<GridSquare key={`${col}${row}`} color="1" />);
-    }
-  }
+  const game = useSelector((state) => state);
+  const { grid, shape, rotation, x, y, isRunning, speed } = game;
+  const block = shapes[shape][rotation];
+  const blockColor = shape;
 
-  return <div className="grid-board">{grid}</div>;
+  // map rows
+  const gridSquares = grid.map((rowArray, row) => {
+    // map columns
+    return rowArray.map((square, col) => {
+      const blockX = col - x;
+      const blockY = row - y;
+      let color = square;
+      if (
+        blockX >= 0 &&
+        blockX < block.length &&
+        blockY >= 0 &&
+        blockY < block.length
+      ) {
+        color = block[blockY][blockX] === 0 ? color : blockColor;
+      }
+      const k = row * grid[0].length + col;
+      return <GridSquare key={k} color={color} />;
+    });
+  });
+
+  return <div className="grid-board">{gridSquares}</div>;
 }

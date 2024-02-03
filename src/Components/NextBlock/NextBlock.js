@@ -10,8 +10,12 @@ export default function NextBlock() {
   const block = shapes[nextShape][0];
   const grid = block.map((row, rowIndex) => {
     return row.map((square, colIndex) => {
-      const color = square ? nextShape : 0;
-      return <GridSquare key={`${rowIndex}${colIndex}`} color={color} />;
+      return (
+        <GridSquare
+          key={`${rowIndex}${colIndex}`}
+          color={square ? nextShape : 0}
+        />
+      );
     });
   });
 
