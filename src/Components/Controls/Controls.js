@@ -1,6 +1,11 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { moveDown, moveLeft, moveRight, rotate } from "../features/gameSlice";
+import {
+  moveDown,
+  moveLeft,
+  moveRight,
+  rotate,
+} from "../../features/gameSlice";
 import "./Controls.css";
 
 export default function Controls(props) {

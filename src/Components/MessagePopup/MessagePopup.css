@@ -9,6 +9,6 @@
   text-align: center;
 }
 
-.message-popup.hidden {
+.hidden {
   display: none;
 }
