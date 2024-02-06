@@ -204,10 +204,10 @@ export const defaultState = () => {
     // Tell the game that it's currently running
     isRunning: true,
     // Set the score to 0
-    score: 0,
+    score: 23000,
     // Set the default speed
     speed: 1000,
     // Game isn't over yet
-    gameOver: false,
+    gameOver: true,
   };
 };
