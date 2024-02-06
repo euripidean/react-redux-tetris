@@ -4,8 +4,6 @@ import { useSelector } from "react-redux";
 import { shapes } from "../../utils/index";
 import "./GridBoard.css";
 
-// Represents a 10 x 18 grid of grid squares
-
 export default function GridBoard() {
   const game = useSelector((state) => state);
   const { grid, shape, rotation, x, y, isRunning, speed } = game;
