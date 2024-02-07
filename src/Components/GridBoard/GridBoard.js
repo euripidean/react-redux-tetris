@@ -6,7 +6,7 @@ import "./GridBoard.css";
 
 export default function GridBoard() {
   const game = useSelector((state) => state);
-  const { grid, shape, rotation, x, y, isRunning, speed } = game;
+  const { grid, shape, rotation, x, y } = game;
   const block = shapes[shape][rotation];
   const blockColor = shape;
 

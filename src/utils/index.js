@@ -212,6 +212,42 @@ export const defaultState = () => {
   };
 };
 
+export const addBlockToGrid = (shape, grid, x, y, rotation) => {
+  // At this point the game is not over
+  let gameOver = false;
+  const block = shapes[shape][rotation];
+  const newGrid = [...grid];
+  for (let row = 0; row < block.length; row++) {
+    for (let col = 0; col < block[row].length; col++) {
+      if (block[row][col]) {
+        const yIndex = row + y;
+        // If the yIndex is less than 0 part of the block
+        // is off the top of the screen and the game is over
+        if (yIndex < 0) {
+          gameOver = true;
+        } else {
+          newGrid[row + y][col + x] = shape;
+        }
+      }
+    }
+  }
+  // Return both the newGrid and the gameOver bool
+  return { newGrid, gameOver };
+};
+
+export const checkRows = (grid) => {
+  let rowsCleared = 0;
+  for (let row = 0; row < grid.length; row++) {
+    if (grid[row].every((cell) => cell !== 0)) {
+      rowsCleared++;
+      // Remove the row and add a new empty one at the top
+      grid.splice(row, 1);
+      grid.unshift(Array(10).fill(0));
+    }
+  }
+  return rowsCleared;
+};
+
 // Returns the next rotation for a shape
 // rotation can't exceed the last index of the rotations for the given shape.
 export const nextRotation = (shape, rotation) => {
