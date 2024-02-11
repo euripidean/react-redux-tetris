@@ -80,7 +80,7 @@ h1 {
 }
 
 body {
-  background: url("/public/pawpatrol_backdrop.jpeg");
+  background: url("./images/pawpatrol_backdrop.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
   font-family: var(--font-family);
