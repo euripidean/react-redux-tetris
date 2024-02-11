@@ -1,34 +1,26 @@
 :root {
-  --bg-color: rgba(150, 150, 150, 1);
+  /* Background Colors */
+  --bg-color: rgba(221, 224, 233, 1);
 
-  /* Border Colors are all transparent colors. These will tint or shade the background color of the square. */
-  --border-left-color: rgba(255, 255, 255, 0.2);
-  --border-top-color: rgba(255, 255, 255, 0.33);
-  --border-right-color: rgba(0, 0, 0, 0.15);
-  --border-bottom-color: rgba(0, 0, 0, 0.5);
+  /* Square Colors */
+  --color-0: #fefefe; /* White */
+  --color-1: #ff9f1a; /* Chase's Color */
+  --color-2: #ffc71b; /* Rubble's Color */
+  --color-3: #0053a0; /* Marshall's Color */
+  --color-4: #b3197d; /* Skye's Color */
+  --color-5: #3cbef5; /* Rocky's Color */
+  --color-6: #b7e021; /* Zuma's Color */
+  --color-7: #c8102e; /* Ryder's Color */
 
-  /* Square Colors: background colors for the squares.*/
-  --color-0: #eaeaea;
-  --color-1: #ff6600;
-  --color-2: #eec900;
-  --color-3: #0000ff;
-  --color-4: #cc00ff;
-  --color-5: #00ff00;
-  --color-6: #66ccff;
-  --color-7: #ff0000;
-
-  /* Button Colors */
-  --button-color-t: rgba(200, 200, 200, 1);
-  --button-color-r: rgba(150, 150, 150, 1);
-  --button-color-b: rgba(120, 120, 120, 1);
-  --button-color-l: rgba(222, 222, 222, 1);
-
-  /* Numbers define values that will be used throughout the CSS.
-  --tile-size: 20px for example will set the size of the grid squares. */
+  /* Grid Properties */
   --cols: 10;
   --rows: 18;
-  --tile-size: 20px;
-  --border-width: 5px;
+  --tile-size: 25px;
+  --border-width: 0.5px;
+
+  /* Font Properties */
+  --font-family: "Helvetica", sans-serif;
+  --font-size: 32px;
 }
 
 /* Colors */
@@ -68,13 +60,38 @@
   box-sizing: border-box;
 }
 
+h1 {
+  font-family: var(--font-family);
+  font-size: 3rem;
+  text-transform: uppercase;
+  color: #0053a0;
+}
+
+.App {
+  margin-top: 5dvh;
+}
 .App-header {
-  background-color: #282c34;
-  min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+body {
+  background: url("/public/pawpatrol_backdrop.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: var(--font-family);
+}
+
+html {
+  height: 100%;
+}
+
+.patrol {
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }

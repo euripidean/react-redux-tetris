@@ -221,8 +221,6 @@ export const addBlockToGrid = (shape, grid, x, y, rotation) => {
     for (let col = 0; col < block[row].length; col++) {
       if (block[row][col]) {
         const yIndex = row + y;
-        // If the yIndex is less than 0 part of the block
-        // is off the top of the screen and the game is over
         if (yIndex < 0) {
           gameOver = true;
         } else {
@@ -237,6 +235,8 @@ export const addBlockToGrid = (shape, grid, x, y, rotation) => {
 
 export const checkRows = (grid) => {
   let rowsCleared = 0;
+  // increase number of points for number of rows cleared
+  const points = [0, 40, 100, 300, 1200];
   for (let row = 0; row < grid.length; row++) {
     if (grid[row].every((cell) => cell !== 0)) {
       rowsCleared++;
@@ -245,7 +245,7 @@ export const checkRows = (grid) => {
       grid.unshift(Array(10).fill(0));
     }
   }
-  return rowsCleared;
+  return points[rowsCleared];
 };
 
 // Returns the next rotation for a shape

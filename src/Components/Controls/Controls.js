@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useCallback } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   moveDown,
@@ -8,7 +8,7 @@ import {
 } from "../../features/gameSlice";
 import "./Controls.css";
 
-export default function Controls(props) {
+export default function Controls() {
   const dispatch = useDispatch();
   const { isRunning, speed, gameOver } = useSelector((state) => state);
 
@@ -18,28 +18,31 @@ export default function Controls(props) {
   const progressTimeRef = useRef(0);
 
   // Handle game updates
-  const update = (time) => {
-    requestRef.current = requestAnimationFrame(update);
-    if (!isRunning) {
-      return;
-    }
-    if (!lastUpdateTimeRef.current) {
+  const update = useCallback(
+    (time) => {
+      requestRef.current = requestAnimationFrame(update);
+      if (!isRunning) {
+        return;
+      }
+      if (!lastUpdateTimeRef.current) {
+        lastUpdateTimeRef.current = time;
+      }
+      const deltaTime = time - lastUpdateTimeRef.current;
+      progressTimeRef.current += deltaTime;
+      if (progressTimeRef.current > speed) {
+        dispatch(moveDown());
+        progressTimeRef.current = 0;
+      }
       lastUpdateTimeRef.current = time;
-    }
-    const deltaTime = time - lastUpdateTimeRef.current;
-    progressTimeRef.current += deltaTime;
-    if (progressTimeRef.current > speed) {
-      dispatch(moveDown());
-      progressTimeRef.current = 0;
-    }
-    lastUpdateTimeRef.current = time;
-  };
+    },
+    [dispatch, isRunning, speed]
+  );
 
   // Control when update is called
   useEffect(() => {
     requestRef.current = requestAnimationFrame(update);
     return () => cancelAnimationFrame(requestRef.current);
-  }, [isRunning]);
+  }, [isRunning, update]);
 
   return (
     <div className="controls">
@@ -51,7 +54,7 @@ export default function Controls(props) {
           dispatch(moveLeft());
         }}
       >
-        Left
+        <i className="fa-solid fa-arrow-left"></i>
       </button>
 
       {/* right */}
@@ -62,18 +65,18 @@ export default function Controls(props) {
           dispatch(moveRight());
         }}
       >
-        Right
+        <i className="fa-solid fa-arrow-right"></i>
       </button>
 
       {/* rotate */}
       <button
         disabled={!isRunning || gameOver}
         className="control-button"
-        onClick={(e) => {
+        onClick={() => {
           dispatch(rotate());
         }}
       >
-        Rotate
+        <i className="fa-solid fa-rotate"></i>
       </button>
 
       {/* down */}
@@ -84,7 +87,7 @@ export default function Controls(props) {
           dispatch(moveDown());
         }}
       >
-        Down
+        <i className="fa-solid fa-arrow-down"></i>
       </button>
     </div>
   );

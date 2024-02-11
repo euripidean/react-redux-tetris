@@ -10,13 +10,18 @@ function App() {
     <div className="App">
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Tetris Redux</h1>
+          <img src="/header.png" alt="Paw Patrol Tetris" />
         </header>
         <GridBoard />
         <NextBlock />
         <ScoreBoard />
         <Controls />
         <MessagePopup />
+        <img
+          className="patrol"
+          src="/paw-patrol-gif.gif"
+          alt="Paw Patrol Tetris"
+        />
       </div>
     </div>
   );
