@@ -138,18 +138,6 @@ html {
 
 /* Adjustments for phones */
 @media (max-width: 480px) {
-  h1 {
-    font-size: 2rem;
-  }
-
-  .App {
-    margin-top: 1vh;
-  }
-
-  header img {
-    width: 100%;
-  }
-
   .patrol {
     visibility: hidden;
   }
