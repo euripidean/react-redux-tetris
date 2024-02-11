@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/react-redux-tetris/static/css/main.03f25eeb.css",
+    "main.css": "/react-redux-tetris/static/css/main.b4b44079.css",
     "main.js": "/react-redux-tetris/static/js/main.dcfe8434.js",
     "static/js/787.1a0bb897.chunk.js": "/react-redux-tetris/static/js/787.1a0bb897.chunk.js",
     "static/media/paw-patrol-gif.gif": "/react-redux-tetris/static/media/paw-patrol-gif.87a940c4e8f5f0249e78.gif",
     "static/media/header.png": "/react-redux-tetris/static/media/header.5cea4f25cd1038fbc95a.png",
     "static/media/pawpatrol_backdrop.jpeg": "/react-redux-tetris/static/media/pawpatrol_backdrop.fc4c3e45970b4aaca6ac.jpeg",
     "index.html": "/react-redux-tetris/index.html",
-    "main.03f25eeb.css.map": "/react-redux-tetris/static/css/main.03f25eeb.css.map",
+    "main.b4b44079.css.map": "/react-redux-tetris/static/css/main.b4b44079.css.map",
     "main.dcfe8434.js.map": "/react-redux-tetris/static/js/main.dcfe8434.js.map",
     "787.1a0bb897.chunk.js.map": "/react-redux-tetris/static/js/787.1a0bb897.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.03f25eeb.css",
+    "static/css/main.b4b44079.css",
     "static/js/main.dcfe8434.js"
   ]
 }
