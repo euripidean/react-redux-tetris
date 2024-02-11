@@ -68,7 +68,11 @@ h1 {
 }
 
 .App {
-  margin-top: 5dvh;
+  margin-top: 3dvh;
+}
+
+header img {
+  width: 200%;
 }
 .App-header {
   display: flex;
@@ -91,6 +95,7 @@ html {
 }
 
 .patrol {
+  height: 50%;
   position: absolute;
   bottom: 0;
   left: 0;

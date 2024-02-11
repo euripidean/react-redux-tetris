@@ -4,7 +4,7 @@
   top: 50%;
   transform: translate(-50%, -50%);
   width: calc(var(--tile-size) * 10);
-  height: calc(var(--tile-size) * 18);
+  height: calc(var(--tile-size) * 9);
   background-color: rgba(255, 255, 255, 0.5);
   text-align: center;
   text-transform: uppercase;

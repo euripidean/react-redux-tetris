@@ -19,7 +19,7 @@
   grid-template-areas:
     "h h h"
     "l c r"
-    ". b .";
+    "b b b";
 }
 
 .App-header {
