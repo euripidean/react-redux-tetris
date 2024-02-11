@@ -21,6 +21,22 @@
   /* Font Properties */
   --font-family: "Helvetica", sans-serif;
   --font-size: 32px;
+
+  /* Styles for tablets */
+  @media (max-width: 768px) {
+    --cols: 8;
+    --rows: 14;
+    --tile-size: 20px;
+    --font-size: 24px;
+  }
+
+  /* Styles for phones */
+  @media (max-width: 480px) {
+    --cols: 6;
+    --rows: 10;
+    --tile-size: 15px;
+    --font-size: 18px;
+  }
 }
 
 /* Colors */
@@ -99,4 +115,42 @@ html {
   position: absolute;
   bottom: 0;
   left: 0;
+}
+
+/* Adjustments for tablets */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .App {
+    margin-top: 2vh;
+  }
+
+  header img {
+    width: 150%;
+  }
+
+  .patrol {
+    height: 40%;
+  }
+}
+
+/* Adjustments for phones */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .App {
+    margin-top: 1vh;
+  }
+
+  header img {
+    width: 100%;
+  }
+
+  .patrol {
+    visibility: hidden;
+  }
 }

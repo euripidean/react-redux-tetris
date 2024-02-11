@@ -20,6 +20,25 @@
     "h h h"
     "l c r"
     "b b b";
+
+  @media (max-width: 768px) {
+    --col-side: calc(var(--tile-size) * 2);
+    --col-center: calc(var(--tile-size) * 6);
+    --grid-height: calc(var(--tile-size) * 12);
+    width: calc(var(--tile-size) * (2 + 1 + 6 + 1 + 2));
+    grid-template-columns: var(--col-side) var(--col-center) var(--col-side);
+    grid-template-rows: 50px var(--grid-height) 50px;
+  }
+
+  /* Styles for phones */
+  @media (max-width: 480px) {
+    --col-side: calc(var(--tile-size) * 1);
+    --col-center: calc(var(--tile-size) * 4);
+    --grid-height: calc(var(--tile-size) * 8);
+    width: calc(var(--tile-size) * (1 + 1 + 4 + 1 + 1));
+    grid-template-columns: var(--col-side) var(--col-center) var(--col-side);
+    grid-template-rows: 25px var(--grid-height) 25px;
+  }
 }
 
 .App-header {
